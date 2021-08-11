@@ -1,0 +1,35 @@
+import java.util.*;
+import java.lang.*;
+class Solution
+{
+ public static void main(String args[])
+ {
+   Scanner sc=new Scanner(System.in);
+   int a[],n,i,j,temp;
+   System.out.println("enter the size of an array");
+   n=sc.nextInt();
+   a=new int[n];
+   System.out.println("enter values of an array");
+   for(i=0;i<n;i++)
+   {
+    a[i]=sc.nextInt();
+   }
+   for(i=0;i<n-1;i++) // no of cycles
+   {
+    for(j=0;j<n-i-1;j++) //  no of comparisions
+    {
+     if(a[j]>a[j+1])
+     {
+      temp=a[j];
+      a[j]=a[j+1];
+      a[j+1]=temp;
+     }
+    }
+   }
+   System.out.println("elements of an array after sorting");
+   for(i=n-1;i>=0;i--)
+   {
+     System.out.println(a[i]);
+   }
+ }
+}
